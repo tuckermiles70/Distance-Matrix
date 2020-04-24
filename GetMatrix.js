@@ -16,7 +16,26 @@ $(document).ready(function() {
         var GCPkey = MY_KEY;
 
         Url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + source + "&destinations=" + destinations + "&key=" + GCPkey;
-        console.log(Url);
+        // console.log(Url);
 
+        // const Http = new XMLHttpRequest();
+        // Http.open("GET", Url);
+        // Http.send();
+
+        // Http.onreadystatechange = (e) => {
+        //     console.log(Http.responseText)
+        // }
+
+
+        // var distance;
+        // $.getJSON(Url, function(data){
+        //     // var distance = data.rows[0].elements[0].distance.text;
+        //     // alert(data.destination_addresses);
+        //     alert("success");
+        // })
+
+        // alert(distance);
+
+        // alert(Url);
       });
 });
