@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<body>
 
+<html>
+
+<head>
+    <script src="config.js"></script>
+    <script src="jquery-3.5.0.min.js"></script> 
+    <script>
+        function parseAndShow() {
+            var GCPKey = MY_KEY;
+            source = document.getElementById("source").value;
+            destinations = document.getElementById("destinations").value;
+            Url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + sources + "&destinations=" + destinations + "&key=" + GCPkey;
+            console.log(Url);
+        }
+    </script>
+
+</head>
+    
+<body>
 <!-- Content will go here -->
-<form>
+<form onsubmit="parseAndShow()">
     <label for="Source">Source:</label><br>
     <input type="text" id="source" name="source"><br>
     <label for="Destinations>Destination:">Destinations:</label><br>
@@ -15,5 +28,6 @@
 </form>
 
 </body>
+
 </html>
 
