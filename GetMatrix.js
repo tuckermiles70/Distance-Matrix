@@ -1,4 +1,4 @@
-const config = require('./config.js');
+const config = require('./config.json');
 
 var locations = ["Knoxville", "Seymour", "Sevierville"];
 
@@ -10,6 +10,8 @@ console.log(GCPkey);
 //https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=YOUR_API_KEY
 
 //HTTP request to get distance and time to locations
-Url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=1105BridgeAvenue,Knoxville%20Tennessee&destinations=3039DawsonWay,Kodak,TN&key=" + GCPkey;
+sources = ["Knoxville,TN", "Charlotte,NC"];
+destinations = ["Charlotte,NC", "Knoxville,TN"];
+Url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + sources + "&destinations=" + destinations + "&key=" + GCPkey;
 
-// console.log(Url);
+console.log(Url);
