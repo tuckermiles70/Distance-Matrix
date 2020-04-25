@@ -15,16 +15,17 @@ $(document).ready(function() {
 
         var GCPkey = MY_KEY;
 
+        var proxy = "https://cors-anywhere.herokuapp.com/";
+
         Url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + source + "&destinations=" + destinations + "&key=" + GCPkey;
-        // console.log(Url);
 
-        // const Http = new XMLHttpRequest();
-        // Http.open("GET", Url);
-        // Http.send();
+        const Http = new XMLHttpRequest();
+        Http.open("GET", Url);
+        Http.send();
 
-        // Http.onreadystatechange = (e) => {
-        //     console.log(Http.responseText)
-        // }
+        Http.onreadystatechange=(e)=>{
+            console.log(Http.responseText.destination_addresses[0]);
+        }
 
 
         // var distance;
@@ -36,6 +37,6 @@ $(document).ready(function() {
 
         // alert(distance);
 
-        // alert(Url);
+        alert(Url);
       });
 });
