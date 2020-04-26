@@ -13,6 +13,6 @@ $(document).ready(function() {
         console.log(source);
         console.log(destinations);
 
-        var GCPkey = MY_KEY;
+        
       });
 });
