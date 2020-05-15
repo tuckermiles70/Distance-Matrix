@@ -7,10 +7,6 @@ $(document).ready(function() {
             result[this.name] = this.value;
         });
 
-        var source = result.source;
-        var destinations = result.destinations;
-
-        //sort of kind of works??
-        initMap("Knoxville, TN", "Sevierville, TN");
+        // initMap();
     });
 });

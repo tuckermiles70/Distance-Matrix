@@ -1,48 +1,56 @@
-//https://cloud.google.com/blog/products/maps-platform/how-use-distance-matrix-api
 // https://cloud.google.com/blog/products/maps-platform/how-use-distance-matrix-api
+
 // Initialize and add the map
 var map;
-function initMap(source, destinations) {
+function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: {lat: 35.9606, lng: -83.9207}
   });
 
-  var origin1 = source;
-  var destinationA = destinations;
+  const cities = [
+    {lat: 41.88, lng: -87.62}, // Chicago
+    {lat: 43.05, lng: -87.95}, // Milwaukee
+    {lat: 42.33, lng: -83.04}, // Detroit
+    {lat: 39.76, lng: -86.15}, // Indianapolis
+    {lat: 38.62, lng: -90.19} // St. Louis
+  ];
 
-  // var destinationB = new google.maps.LatLng(50.087692, 14.421150);
-
-  var service = new google.maps.DistanceMatrixService();
-  service.getDistanceMatrix(
-  {
-      origins: [origin1],
-      destinations: [destinationA],
-      travelMode: 'DRIVING',
-      // transitOptions: TransitOptions,
-      // drivingOptions: DrivingOptions,
-      // unitSystem: UnitSystem,
-      // avoidHighways: Boolean,
-      // avoidTolls: Boolean,
-  }, callback);
-}
-
-function callback(response, status) {
-  alert(status);
-  if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      for (var j = 0; j < results.length; j++) {
-        var element = results[j];
-        var distance = element.distance.text;
-        var duration = element.duration.text;
-        var from = origins[i];
-        var to = destinations[j];
-        alert(origins[i] + " to " + destinations[j] + ": " + distance + " " + duration);
-      }
-    }
+  // Loop through cities, adding markers
+  for (let i=0; i<cities.length; i++) {
+    let position = cities[i]; // location of one city
+    // create marker for a city
+    let mk = new google.maps.Marker({position: position, map: map});
   }
+
+  var result = {};
+  // $.each($('form').serializeArray(), function() {
+  //     result[this.name] = this.value;
+  // });
+
+  var source = document.getElementById('source').value; //result.source.toString();
+  // var destinations = result.destinations;
+
+  alert(source);
+
+  const service = new google.maps.DistanceMatrixService(); // instantiate Distance Matrix service
+  const matrixOptions = {
+    origins: [source],
+    destinations: ["Knoxville, TN"],
+    travelMode: 'DRIVING',
+    unitSystem: google.maps.UnitSystem.IMPERIAL
+  };
+
+  // Call Distance Matrix service
+  service.getDistanceMatrix(matrixOptions, callback);
+
+  // Callback function used to process Distance Matrix response
+  function callback(response, status) {
+    if (status !== "OK") {
+      alert("Error with distance matrix");
+      return;
+    }
+    console.log(response);        
+  }
+  // Add Distance Matrix here
 }
