@@ -13,7 +13,8 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     <script src="config.js"></script>
-    <script src="Init.js"></script>
+    <script src="main.js"></script>
+    <!-- <script src="Init.js"></script> -->
     <!-- <script src="GetMatrix.js"></script> -->
 </head>
     
@@ -29,9 +30,8 @@
 
 <div id="map"></div>
 
-<!-- This is done to hide my API key from Github... -->
 <script type="text/javascript">
-    var glink = "https://maps.googleapis.com/maps/api/js?key=" + MY_KEY + "&callback=initMap";
+    var glink = "https://maps.googleapis.com/maps/api/js?key=" + MY_KEY + "&callback=initMap";  //this is done to hide my API key from Github...
     document.write("<script async defer src=" + glink);
 </script>
 
