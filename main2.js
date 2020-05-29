@@ -15,9 +15,26 @@ $(document).ready(function() {
     console.log("Source:\n" + source);
 
     console.log("Destinations:");
-    for (i = 0; i < destinations.length; i++) {
+    for (i = 0; i < 4; i++) {
       console.log(destinations[i]);
     }
+
+    var linkprefix = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial";
+
+    var origin = "&origins=" + source;
+
+    var destinationstring = "&destinations=";
+    for (i = 0; i < 4; i++) {
+      destinationstring += destinations[i];
+      if (i != 4 - 1) {
+        destinationstring += "|";
+      }
+    }
+
+    var key = "&key=" + MY_KEY;
+    var fulllink = linkprefix + origin + destinationstring + key;
+
+    console.log(fulllink);
 
     console.log("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=" + MY_KEY);
 
