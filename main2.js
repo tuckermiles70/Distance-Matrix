@@ -1,5 +1,13 @@
-
 //Spent forever attempting to make multiple calls to the API using the JS library, endless issues for me. Decided to switch to HTTP so I can move forward.
+
+//just using chomre plugin to temporarilt fix cors issues.
+function get(url) {
+  fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data));
+}
+
+
 $(document).ready(function() {
   $( "form" ).on( "submit", function() {
     console.log("submitted!");
@@ -34,9 +42,9 @@ $(document).ready(function() {
     var key = "&key=" + MY_KEY;
     var fulllink = linkprefix + origin + destinationstring + key;
 
-    console.log(fulllink);
+    // console.log(fulllink);
 
-    console.log("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=" + MY_KEY);
+    // console.log("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=" + MY_KEY);
 
 
   });
