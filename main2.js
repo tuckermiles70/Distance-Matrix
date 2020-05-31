@@ -1,15 +1,6 @@
 //Spent forever attempting to make multiple calls to the API using the JS library, endless issues for me. Decided to switch to HTTP so I can move forward.
 
-//just using chomre plugin to temporarily fix cors issues.
-async function get(url) {
-  await fetch(url)
-    .then(response => response.json())
-    .then(data => console.log(data));
-}
-
-//For Testing: "http://api.plos.org/search?q=title:DNA"
-
-// get("http://api.plos.org/search?q=title:DNA");
+//Great for testing: "http://api.plos.org/search?q=title:DNA"
 
 $(document).ready(function () {
   $("form").on("submit", function () {
@@ -54,6 +45,7 @@ $(document).ready(function () {
       }
     };
     //false to make this synchronous
+    //just using chomre plugin to temporarily fix cors issues.
     xhttp.open("GET", fulllink, false);
     xhttp.send();
   });
