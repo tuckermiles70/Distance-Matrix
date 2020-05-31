@@ -3,7 +3,7 @@
 //Great for testing: "http://api.plos.org/search?q=title:DNA"
 
 $(document).ready(function () {
-  $("form").on("submit", function () {
+  $("#button").click(function () {
     console.log("submitted!");
 
     var source;
@@ -46,6 +46,8 @@ $(document).ready(function () {
         var a = xhttp.responseText;
         a = JSON.parse(a);
 
+        document.getElementById("outputtext").innerHTML = 
+
         console.log("Origin: " + a.origin_addresses[0]);
 
         console.log("Distance to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].distance.text);
@@ -65,5 +67,7 @@ $(document).ready(function () {
     //just using chomre plugin to temporarily fix cors issues.
     xhttp.open("GET", fulllink, false);
     xhttp.send();
+
+    document.getElementById("outputtext").innerHTML = "here haha";
   });
 });
