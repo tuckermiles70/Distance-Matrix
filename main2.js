@@ -1,23 +1,26 @@
 //Spent forever attempting to make multiple calls to the API using the JS library, endless issues for me. Decided to switch to HTTP so I can move forward.
 
-//just using chomre plugin to temporarilt fix cors issues.
-function get(url) {
-  fetch(url)
-  .then(response => response.json())
-  .then(data => console.log(data));
+//just using chomre plugin to temporarily fix cors issues.
+async function get(url) {
+  await fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data));
 }
 
+//For Testing: "http://api.plos.org/search?q=title:DNA"
 
-$(document).ready(function() {
-  $( "form" ).on( "submit", function() {
+// get("http://api.plos.org/search?q=title:DNA");
+
+$(document).ready(function () {
+  $("form").on("submit", function () {
     console.log("submitted!");
 
     var source;
     var destinations = [];
     source = document.getElementById("source").value;
     destinations[0] = document.getElementById("destination0").value;
-    destinations[1] = document.getElementById("destination1").value; 
-    destinations[2] = document.getElementById("destination2").value; 
+    destinations[1] = document.getElementById("destination1").value;
+    destinations[2] = document.getElementById("destination2").value;
     destinations[3] = document.getElementById("destination3").value;
 
     console.log("Source:\n" + source);
@@ -42,10 +45,16 @@ $(document).ready(function() {
     var key = "&key=" + MY_KEY;
     var fulllink = linkprefix + origin + destinationstring + key;
 
-    // console.log(fulllink);
-
-    // console.log("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=" + MY_KEY);
-
-
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        // Typical action to be performed when the document is ready:
+        // document.getElementById("demo").innerHTML = xhttp.responseText;
+        console.log(xhttp.responseText);
+      }
+    };
+    //false to make this synchronous
+    xhttp.open("GET", fulllink, false);
+    xhttp.send();
   });
 });
