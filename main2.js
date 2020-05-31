@@ -8,6 +8,8 @@ $(document).ready(function () {
 
     var source;
     var destinations = [];
+
+    //Pulling source and destinations from inputs upon submission
     source = document.getElementById("source").value;
     destinations[0] = document.getElementById("destination0").value;
     destinations[1] = document.getElementById("destination1").value;
@@ -19,8 +21,8 @@ $(document).ready(function () {
     destinations[7] = document.getElementById("destination7").value;
     
 
+    //console logging for debug purposes
     console.log("Source:\n" + source);
-
     console.log("Destinations:");
     for (i = 0; i < 8; i++) {
       console.log(destinations[i]);
@@ -30,6 +32,7 @@ $(document).ready(function () {
 
     var origin = "&origins=" + source;
 
+    //String manipulation for getting proper http request link
     var destinationstring = "&destinations=";
     for (i = 0; i < 8; i++) {
       destinationstring += destinations[i];
@@ -41,10 +44,14 @@ $(document).ready(function () {
     }
 
     var key = "&key=" + MY_KEY;
+
+    //Finally, adding all the individual string components together
     var fulllink = linkprefix + origin + destinationstring + key;
 
+    //Console debugging
     console.log(fulllink);
 
+    //HTTP get request
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -85,8 +92,10 @@ $(document).ready(function () {
           Time to ${a.destination_addresses[7]}: ${a.rows[0].elements[7].duration.text} <br> <br>
         `
 
+        //Insert aboce string into page's HTML
         document.getElementById("outputtext").innerHTML = inner;
 
+        //Console debugging
         console.log("Origin: " + a.origin_addresses[0]);
 
         console.log("Distance to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].distance.text);
@@ -115,7 +124,7 @@ $(document).ready(function () {
       }
     };
     //false to make this synchronous
-    //just using chomre plugin to temporarily fix cors issues.
+    //just using chrome plugin to temporarily fix cors issues.
     xhttp.open("GET", fulllink, false);
     xhttp.send();
   });
