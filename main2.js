@@ -13,11 +13,16 @@ $(document).ready(function () {
     destinations[1] = document.getElementById("destination1").value;
     destinations[2] = document.getElementById("destination2").value;
     destinations[3] = document.getElementById("destination3").value;
+    destinations[4] = document.getElementById("destination4").value;
+    destinations[5] = document.getElementById("destination5").value;
+    destinations[6] = document.getElementById("destination6").value;
+    destinations[7] = document.getElementById("destination7").value;
+    
 
     console.log("Source:\n" + source);
 
     console.log("Destinations:");
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 8; i++) {
       console.log(destinations[i]);
     }
 
@@ -26,10 +31,12 @@ $(document).ready(function () {
     var origin = "&origins=" + source;
 
     var destinationstring = "&destinations=";
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 8; i++) {
       destinationstring += destinations[i];
-      if (i != 4 - 1) {
-        destinationstring += "|";
+      if (i != 8 - 1) {
+        if (destinations[i] != "") {
+          destinationstring += "|";
+        }
       }
     }
 
@@ -45,10 +52,11 @@ $(document).ready(function () {
         // document.getElementById("demo").innerHTML = xhttp.responseText;
         var a = xhttp.responseText;
         a = JSON.parse(a);
+        console.log(a);
 
         
     
-        //wonderful interpolation... :)
+        // wonderful interpolation... :)
         var inner = `
           Origin:  ${a.origin_addresses[0]} <br> <br>
 
@@ -63,9 +71,21 @@ $(document).ready(function () {
 
           Distance to ${a.destination_addresses[3]}: ${a.rows[0].elements[3].distance.text} <br>
           Time to ${a.destination_addresses[3]}: ${a.rows[0].elements[3].duration.text} <br> <br>
-        `
-        document.getElementById("outputtext").innerHTML = inner;
 
+          Distance to ${a.destination_addresses[4]}: ${a.rows[0].elements[4].distance.text} <br>
+          Time to ${a.destination_addresses[4]}: ${a.rows[0].elements[4].duration.text} <br> <br>
+
+          Distance to ${a.destination_addresses[5]}: ${a.rows[0].elements[5].distance.text} <br>
+          Time to ${a.destination_addresses[5]}: ${a.rows[0].elements[5].duration.text} <br> <br>
+
+          Distance to ${a.destination_addresses[6]}: ${a.rows[0].elements[6].distance.text} <br>
+          Time to ${a.destination_addresses[6]}: ${a.rows[0].elements[6].duration.text} <br> <br>
+
+          Distance to ${a.destination_addresses[7]}: ${a.rows[0].elements[7].distance.text} <br>
+          Time to ${a.destination_addresses[7]}: ${a.rows[0].elements[7].duration.text} <br> <br>
+        `
+
+        document.getElementById("outputtext").innerHTML = inner;
 
         console.log("Origin: " + a.origin_addresses[0]);
 
@@ -80,6 +100,18 @@ $(document).ready(function () {
 
         console.log("Distance to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].distance.text);
         console.log("Time to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[4] + ": " + a.rows[0].elements[4].distance.text);
+        console.log("Time to " + a.destination_addresses[4] + ": " + a.rows[0].elements[4].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[5] + ": " + a.rows[0].elements[5].distance.text);
+        console.log("Time to " + a.destination_addresses[5] + ": " + a.rows[0].elements[5].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[6] + ": " + a.rows[0].elements[6].distance.text);
+        console.log("Time to " + a.destination_addresses[6] + ": " + a.rows[0].elements[6].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].distance.text);
+        console.log("Time to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].duration.text);
       }
     };
     //false to make this synchronous

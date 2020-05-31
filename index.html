@@ -3,26 +3,50 @@
 <html>
 
 <head>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     <script src="config.js"></script>
     <script src="main2.js"></script>
 </head>
     
 <body>
-<!-- Content will go here -->
-<!-- <form> -->
-    <label for="Source">Source:</label><br>
+
+    <div class="container">
+        <!-- <h2>Form control: input</h2> -->
+        <!-- <p>The form below contains two input elements; one of type text and one of type password:</p> -->
+        <form action="/action_page.php">
+          <div class="form-group">
+            <label for="usr">Source:</label>
+            <input type="text" class="form-control" id="source">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Destinations:</label>
+            <input type="text" class="form-control" id="destination0">
+            <input type="text" class="form-control" id="destination1">
+            <input type="text" class="form-control" id="destination2">
+            <input type="text" class="form-control" id="destination3">
+            <input type="text" class="form-control" id="destination4">
+            <input type="text" class="form-control" id="destination5">
+            <input type="text" class="form-control" id="destination6">
+            <input type="text" class="form-control" id="destination7">
+          </div>
+          <button type="button" id="button" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+
+    <!-- <label for="Source">Source:</label><br>
     <input type="text" id="source" name="source"><br>
     <label for="Destinations>Destination:">Destinations:</label><br>
     <input type="text" id="destination0" name="destination0">
     <input type="text" id="destination1" name="destination1">
     <input type="text" id="destination2" name="destination2">
     <input type="text" id="destination3" name="destination3">
-    <input type="button" id="button" value="submit">
-<!-- </form> -->
+    <input type="button" class="btn btn-primary" id="button" value="submit"> -->
 
-<p id="outputtext"></p>
+    <p id="outputtext"></p>
 
 
 </body>
