@@ -46,7 +46,26 @@ $(document).ready(function () {
         var a = xhttp.responseText;
         a = JSON.parse(a);
 
-        document.getElementById("outputtext").innerHTML = 
+        
+    
+        //wonderful interpolation... :)
+        var inner = `
+          Origin:  ${a.origin_addresses[0]} <br> <br>
+
+          Distance to ${a.destination_addresses[0]}:  ${a.rows[0].elements[0].distance.text} <br>
+          Time to  ${a.destination_addresses[0]}:  ${a.rows[0].elements[0].duration.text} <br> <br>
+
+          Distance to ${a.destination_addresses[1]}: ${a.rows[0].elements[1].distance.text} <br>
+          Time to ${a.destination_addresses[1]}: ${a.rows[0].elements[1].duration.text} <br> <br>
+
+          Distance to ${a.destination_addresses[2]}: ${a.rows[0].elements[2].distance.text} <br>
+          Time to ${a.destination_addresses[2]}: ${a.rows[0].elements[2].duration.text} <br> <br>
+
+          Distance to ${a.destination_addresses[3]}: ${a.rows[0].elements[3].distance.text} <br>
+          Time to ${a.destination_addresses[3]}: ${a.rows[0].elements[3].duration.text} <br> <br>
+        `
+        document.getElementById("outputtext").innerHTML = inner;
+
 
         console.log("Origin: " + a.origin_addresses[0]);
 
@@ -67,7 +86,5 @@ $(document).ready(function () {
     //just using chomre plugin to temporarily fix cors issues.
     xhttp.open("GET", fulllink, false);
     xhttp.send();
-
-    document.getElementById("outputtext").innerHTML = "here haha";
   });
 });
