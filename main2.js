@@ -36,12 +36,29 @@ $(document).ready(function () {
     var key = "&key=" + MY_KEY;
     var fulllink = linkprefix + origin + destinationstring + key;
 
+    console.log(fulllink);
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         // Typical action to be performed when the document is ready:
         // document.getElementById("demo").innerHTML = xhttp.responseText;
-        console.log(xhttp.responseText);
+        var a = xhttp.responseText;
+        a = JSON.parse(a);
+
+        console.log("Origin: " + a.origin_addresses[0]);
+
+        console.log("Distance to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].distance.text);
+        console.log("Time to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[1] + ": " + a.rows[0].elements[1].distance.text);
+        console.log("Time to " + a.destination_addresses[1] + ": " + a.rows[0].elements[1].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[2] + ": " + a.rows[0].elements[2].distance.text);
+        console.log("Time to " + a.destination_addresses[2] + ": " + a.rows[0].elements[2].duration.text);
+
+        console.log("Distance to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].distance.text);
+        console.log("Time to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].duration.text);
       }
     };
     //false to make this synchronous
