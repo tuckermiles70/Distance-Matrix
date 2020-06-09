@@ -67,25 +67,25 @@ $(document).ready(function () {
         document.getElementById("td2").innerHTML = a.rows[0].elements[0].duration.text
         document.getElementById("td3").innerHTML = a.destination_addresses[1];
         document.getElementById("td4").innerHTML = a.rows[0].elements[1].distance.text
-        document.getElementById("td5").innerHTML = a.rows[0].elements[1].distance.text
+        document.getElementById("td5").innerHTML = a.rows[0].elements[1].duration.text
         document.getElementById("td6").innerHTML = a.destination_addresses[2];
         document.getElementById("td7").innerHTML = a.rows[0].elements[2].distance.text
-        document.getElementById("td8").innerHTML = a.rows[0].elements[2].distance.text
+        document.getElementById("td8").innerHTML = a.rows[0].elements[2].duration.text
         document.getElementById("td9").innerHTML = a.destination_addresses[3];
         document.getElementById("td10").innerHTML = a.rows[0].elements[3].distance.text
-        document.getElementById("td11").innerHTML = a.rows[0].elements[3].distance.text
+        document.getElementById("td11").innerHTML = a.rows[0].elements[3].duration.text
         document.getElementById("td12").innerHTML = a.destination_addresses[4];
         document.getElementById("td13").innerHTML = a.rows[0].elements[4].distance.text
-        document.getElementById("td14").innerHTML = a.rows[0].elements[4].distance.text
+        document.getElementById("td14").innerHTML = a.rows[0].elements[4].duration.text
         document.getElementById("td15").innerHTML = a.destination_addresses[5];
         document.getElementById("td16").innerHTML = a.rows[0].elements[5].distance.text
-        document.getElementById("td17").innerHTML = a.rows[0].elements[5].distance.text
+        document.getElementById("td17").innerHTML = a.rows[0].elements[5].duration.text
         document.getElementById("td18").innerHTML = a.destination_addresses[6];
         document.getElementById("td19").innerHTML = a.rows[0].elements[6].distance.text
-        document.getElementById("td20").innerHTML = a.rows[0].elements[6].distance.text
+        document.getElementById("td20").innerHTML = a.rows[0].elements[6].duration.text
         document.getElementById("td21").innerHTML = a.destination_addresses[7];
         document.getElementById("td22").innerHTML = a.rows[0].elements[7].distance.text
-        document.getElementById("td23").innerHTML = a.rows[0].elements[7].distance.text
+        document.getElementById("td23").innerHTML = a.rows[0].elements[7].duration.text
         
     
         // wonderful interpolation... :)
