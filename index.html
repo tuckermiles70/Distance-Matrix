@@ -27,83 +27,87 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="form-group">
-        <label class="h3" for="usr">Source:</label>
-        <input type="text" class="form-control m-2" id="source" />
+    <div class="row">
+      <!-- <p>The form below contains two input elements; one of type text and one of type password:</p> -->
+      <div class="container col-lg-6">
+        <div class="form-group">
+          <label class="h3" for="usr">Source:</label>
+          <input type="text" class="form-control m-2" id="source" />
+        </div>
+        <div class="form-group">
+          <label class="h3" for="pwd">Destinations:</label>
+          <input type="text" class="form-control m-2" id="destination0" />
+          <input type="text" class="form-control m-2" id="destination1" />
+          <input type="text" class="form-control m-2" id="destination2" />
+          <input type="text" class="form-control m-2" id="destination3" />
+          <input type="text" class="form-control m-2" id="destination4" />
+          <input type="text" class="form-control m-2" id="destination5" />
+          <input type="text" class="form-control m-2" id="destination6" />
+          <input type="text" class="form-control m-2" id="destination7" />
+        </div>
+        <button type="button" id="button" class="btn btn-primary m-2">
+          Submit
+        </button>
       </div>
-      <div class="form-group">
-        <label class="h3" for="pwd">Destinations:</label>
-        <input type="text" class="form-control m-2" id="destination0" />
-        <input type="text" class="form-control m-2" id="destination1" />
-        <input type="text" class="form-control m-2" id="destination2" />
-        <input type="text" class="form-control m-2" id="destination3" />
-        <input type="text" class="form-control m-2" id="destination4" />
-        <input type="text" class="form-control m-2" id="destination5" />
-        <input type="text" class="form-control m-2" id="destination6" />
-        <input type="text" class="form-control m-2" id="destination7" />
-      </div>
-      <button type="button" id="button" class="btn btn-primary m-2">
-        Submit
-      </button>
-    </div>
 
-    <div class="container">
       <!-- <h2>Basic Table</h2> -->
       <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Destination</th>
-            <th>Distance</th>
-            <th>Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td id="td0"></td>
-            <td id="td1"></td>
-            <td id="td2"></td>
-          </tr>
-          <tr>
-            <td id="td3"></td>
-            <td id="td4"></td>
-            <td id="td5"></td>
-          </tr>
-          <tr>
-            <td id="td6"></td>
-            <td id="td7"></td>
-            <td id="td8"></td>
-          </tr>
-          <tr>
-            <td id="td9"></td>
-            <td id="td10"></td>
-            <td id="td11"></td>
-          </tr>
-          <tr>
-            <td id="td12"></td>
-            <td id="td13"></td>
-            <td id="td14"></td>
-          </tr>
-          <tr>
-            <td id="td15"></td>
-            <td id="td16"></td>
-            <td id="td17"></td>
-          </tr>
-          <tr>
-            <td id="td18"></td>
-            <td id="td19"></td>
-            <td id="td20"></td>
-          </tr>
-          <tr>
-            <td id="td21"></td>
-            <td id="td22"></td>
-            <td id="td23"></td>
-          </tr>
-        </tbody>
-      </table>
+
+      <div class="container col-md-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Distance</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="td0"></td>
+              <td id="td1"></td>
+              <td id="td2"></td>
+            </tr>
+            <tr>
+              <td id="td3"></td>
+              <td id="td4"></td>
+              <td id="td5"></td>
+            </tr>
+            <tr>
+              <td id="td6"></td>
+              <td id="td7"></td>
+              <td id="td8"></td>
+            </tr>
+            <tr>
+              <td id="td9"></td>
+              <td id="td10"></td>
+              <td id="td11"></td>
+            </tr>
+            <tr>
+              <td id="td12"></td>
+              <td id="td13"></td>
+              <td id="td14"></td>
+            </tr>
+            <tr>
+              <td id="td15"></td>
+              <td id="td16"></td>
+              <td id="td17"></td>
+            </tr>
+            <tr>
+              <td id="td18"></td>
+              <td id="td19"></td>
+              <td id="td20"></td>
+            </tr>
+            <tr>
+              <td id="td21"></td>
+              <td id="td22"></td>
+              <td id="td23"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <p id="outputtext"></p>
+    <!-- <p id="outputtext"></p> -->
   </body>
 </html>
