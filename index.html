@@ -1,107 +1,109 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
+  <head>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
     <!-- Just sets background color -->
     <style type="text/css">
-      body { background: #a8dadc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-   </style>
+      body {
+        background: #a8dadc !important;
+      } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
 
-    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
     <script src="config.js"></script>
     <script src="main2.js"></script>
-</head>
-    
-<body>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-group">
+        <label class="h3" for="usr">Source:</label>
+        <input type="text" class="form-control m-2" id="source" />
+      </div>
+      <div class="form-group">
+        <label class="h3" for="pwd">Destinations:</label>
+        <input type="text" class="form-control m-2" id="destination0" />
+        <input type="text" class="form-control m-2" id="destination1" />
+        <input type="text" class="form-control m-2" id="destination2" />
+        <input type="text" class="form-control m-2" id="destination3" />
+        <input type="text" class="form-control m-2" id="destination4" />
+        <input type="text" class="form-control m-2" id="destination5" />
+        <input type="text" class="form-control m-2" id="destination6" />
+        <input type="text" class="form-control m-2" id="destination7" />
+      </div>
+      <button type="button" id="button" class="btn btn-primary m-2">
+        Submit
+      </button>
+    </div>
 
     <div class="container">
-        <!-- <h2>Form control: input</h2> -->
-        <!-- <p>The form below contains two input elements; one of type text and one of type password:</p> -->
-        <form action="/action_page.php">
-          <div class="form-group">
-            <label for="usr">Source:</label>
-            <input type="text" class="form-control" id="source">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Destinations:</label>
-            <input type="text" class="form-control" id="destination0">
-            <input type="text" class="form-control" id="destination1">
-            <input type="text" class="form-control" id="destination2">
-            <input type="text" class="form-control" id="destination3">
-            <input type="text" class="form-control" id="destination4">
-            <input type="text" class="form-control" id="destination5">
-            <input type="text" class="form-control" id="destination6">
-            <input type="text" class="form-control" id="destination7">
-          </div>
-          <button type="button" id="button" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-
-      <div class="container">
-        <!-- <h2>Basic Table</h2> -->
-        <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Destination</th>
-              <th>Distance</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td id="td0"></td>
-                <td id="td1"></td>
-                <td id="td2"></td>
-            </tr>
-            <tr>
-                <td id="td3"></td>
-                <td id="td4"></td>
-                <td id="td5"></td>
-            </tr>
-            <tr>
-                <td id="td6"></td>
-                <td id="td7"></td>
-                <td id="td8"></td>
-            </tr>
-            <tr>
-                <td id="td9"></td>
-                <td id="td10"></td>
-                <td id="td11"></td>
-            </tr>
-            <tr>
-                <td id="td12"></td>
-                <td id="td13"></td>
-                <td id="td14"></td>
-            </tr>
-            <tr>
-                <td id="td15"></td>
-                <td id="td16"></td>
-                <td id="td17"></td>
-            </tr>
-            <tr>
-                <td id="td18"></td>
-                <td id="td19"></td>
-                <td id="td20"></td>
-            </tr>
-            <tr>
-                <td id="td21"></td>
-                <td id="td22"></td>
-                <td id="td23"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+      <!-- <h2>Basic Table</h2> -->
+      <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Distance</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="td0"></td>
+            <td id="td1"></td>
+            <td id="td2"></td>
+          </tr>
+          <tr>
+            <td id="td3"></td>
+            <td id="td4"></td>
+            <td id="td5"></td>
+          </tr>
+          <tr>
+            <td id="td6"></td>
+            <td id="td7"></td>
+            <td id="td8"></td>
+          </tr>
+          <tr>
+            <td id="td9"></td>
+            <td id="td10"></td>
+            <td id="td11"></td>
+          </tr>
+          <tr>
+            <td id="td12"></td>
+            <td id="td13"></td>
+            <td id="td14"></td>
+          </tr>
+          <tr>
+            <td id="td15"></td>
+            <td id="td16"></td>
+            <td id="td17"></td>
+          </tr>
+          <tr>
+            <td id="td18"></td>
+            <td id="td19"></td>
+            <td id="td20"></td>
+          </tr>
+          <tr>
+            <td id="td21"></td>
+            <td id="td22"></td>
+            <td id="td23"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <p id="outputtext"></p>
-
-
-</body>
-
+  </body>
 </html>
-
