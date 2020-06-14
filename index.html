@@ -15,6 +15,15 @@
       body {
         background: #a8dadc !important;
       } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+
+      /* Changing Table Border Color */
+      /* https://stackoverflow.com/questions/30573978/what-is-the-best-way-to-change-the-border-color-of-a-bootstrap-table */
+      .table th {
+        border: gray solid 1px !important;
+      }
+      .table td {
+        border: gray solid 1px !important;
+      }
     </style>
 
     <script
@@ -54,54 +63,54 @@
       <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
 
       <div class="container col-md-6">
-        <table class="table">
+        <table class="table table-hover table-bordered m-2">
           <thead>
             <tr>
-              <th>Destination</th>
-              <th>Distance</th>
-              <th>Time</th>
+              <th class="h3">Destination</th>
+              <th class="h3">Distance</th>
+              <th class="h3">Time</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td id="td0"></td>
-              <td id="td1"></td>
-              <td id="td2"></td>
+              <td class="h5" id="td0">Dest</td>
+              <td class="h5" id="td1">Distance</td>
+              <td class="h5" id="td2">Time</td>
             </tr>
             <tr>
-              <td id="td3"></td>
-              <td id="td4"></td>
-              <td id="td5"></td>
+              <td class="h5" id="td3">Dest</td>
+              <td class="h5" id="td4">Distance</td>
+              <td class="h5" id="td5">Time</td>
             </tr>
             <tr>
-              <td id="td6"></td>
-              <td id="td7"></td>
-              <td id="td8"></td>
+              <td class="h5" id="td6">Dest</td>
+              <td class="h5" id="td7">Distance</td>
+              <td class="h5" id="td8">Time</td>
             </tr>
             <tr>
-              <td id="td9"></td>
-              <td id="td10"></td>
-              <td id="td11"></td>
+              <td class="h5" id="td9">Dest</td>
+              <td class="h5" id="td10">Distance</td>
+              <td class="h5" id="td11">Time</td>
             </tr>
             <tr>
-              <td id="td12"></td>
-              <td id="td13"></td>
-              <td id="td14"></td>
+              <td class="h5" id="td12">Dest</td>
+              <td class="h5" id="td13">Distance</td>
+              <td class="h5" id="td14">Time</td>
             </tr>
             <tr>
-              <td id="td15"></td>
-              <td id="td16"></td>
-              <td id="td17"></td>
+              <td class="h5" id="td15">Dest</td>
+              <td class="h5" id="td16">Distance</td>
+              <td class="h5" id="td17">Time</td>
             </tr>
             <tr>
-              <td id="td18"></td>
-              <td id="td19"></td>
-              <td id="td20"></td>
+              <td class="h5" id="td18">Dest</td>
+              <td class="h5" id="td19">Distance</td>
+              <td class="h5" id="td20">Time</td>
             </tr>
             <tr>
-              <td id="td21"></td>
-              <td id="td22"></td>
-              <td id="td23"></td>
+              <td class="h5" id="td21">Dest</td>
+              <td class="h5" id="td22">Distance</td>
+              <td class="h5" id="td23">Time</td>
             </tr>
           </tbody>
         </table>
