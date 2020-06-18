@@ -1,127 +1,183 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
 
-    <!-- Just sets background color -->
-    <style type="text/css">
-      body {
-        background: #a8dadc !important;
-      } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+<head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
-      /* Changing Table Border Color */
-      /* https://stackoverflow.com/questions/30573978/what-is-the-best-way-to-change-the-border-color-of-a-bootstrap-table */
-      .table th {
-        border: gray solid 1px !important;
-      }
-      .table td {
-        border: gray solid 1px !important;
-      }
-    </style>
+  <!-- Just sets background color -->
+  <style type="text/css">
+    body {
+      background: #a8dadc !important;
+    }
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.0.js"
-      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-      crossorigin="anonymous"
-    ></script>
-    <script src="config.js"></script>
-    <script src="main2.js"></script>
-  </head>
+    /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
 
-  <body>
-    <div class="row">
-      <!-- <p>The form below contains two input elements; one of type text and one of type password:</p> -->
-      <div class="container col-lg-6">
-        <div class="form-group">
-          <label class="h3 m-1" for="usr">Source:</label>
-          <input type="text" class="form-control m-2" id="source" />
-        </div>
-        <div class="form-group">
-          <label class="h3 m-1" for="pwd">Destinations:</label>
-          <input type="text" class="form-control m-2" id="destination0" />
-          <input type="text" class="form-control m-2" id="destination1" />
-          <input type="text" class="form-control m-2" id="destination2" />
-          <input type="text" class="form-control m-2" id="destination3" />
-          <input type="text" class="form-control m-2" id="destination4" />
-          <input type="text" class="form-control m-2" id="destination5" />
-          <input type="text" class="form-control m-2" id="destination6" />
-          <input type="text" class="form-control m-2" id="destination7" />
-        </div>
+    /* Changing Table Border Color */
+    /* https://stackoverflow.com/questions/30573978/what-is-the-best-way-to-change-the-border-color-of-a-bootstrap-table */
+    .table th {
+      border: gray solid 1px !important;
+    }
 
-        <div class="form-group">
-          <label class="h3 m-1" for="usr">Additional Parameters</label>
-        </div>
+    .table td {
+      border: gray solid 1px !important;
+    }
+  </style>
 
-        <button type="button" id="button" class="btn btn-primary m-2">
-          Submit
-        </button>
+  <script src="config.js"></script>
+  <script src="main2.js"></script>
+</head>
+
+<body class="m-2">
+  <div class="row">
+    <!-- <p>The form below contains two input elements; one of type text and one of type password:</p> -->
+    <div class="container col-lg-6">
+      <div class="form-group">
+        <label class="h3">Source:</label>
+        <input type="text" class="form-control m-2" id="source" placeholder="Enter Source"/>
+      </div>
+      <div class="form-group">
+        <label class="h3">Destinations:</label>
+        <input type="text" class="form-control m-2" id="destination0" placeholder="Enter Destination 1"/>
+        <input type="text" class="form-control m-2" id="destination1" placeholder="Enter Destination 2"/>
+        <input type="text" class="form-control m-2" id="destination2" placeholder="Enter Destination 3"/>
+        <input type="text" class="form-control m-2" id="destination3" placeholder="Enter Destination 4"/>
+        <input type="text" class="form-control m-2" id="destination4" placeholder="Enter Destination 5"/>
+        <input type="text" class="form-control m-2" id="destination5" placeholder="Enter Destination 6"/>
+        <input type="text" class="form-control m-2" id="destination6" placeholder="Enter Destination 7"/>
+        <input type="text" class="form-control m-2" id="destination7" placeholder="Enter Destination 8"/>
       </div>
 
-      <!-- <h2>Basic Table</h2> -->
-      <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
+      <label class="h3" for="usr">Additional Parameters</label>
 
-      <div class="container col-md-6">
-        <table class="table table-hover table-bordered m-2">
-          <thead>
-            <tr>
-              <th class="h3">Destination</th>
-              <th class="h3">Distance</th>
-              <th class="h3">Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="h5" id="td0">Dest</td>
-              <td class="h5" id="td1">Distance</td>
-              <td class="h5" id="td2">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td3">Dest</td>
-              <td class="h5" id="td4">Distance</td>
-              <td class="h5" id="td5">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td6">Dest</td>
-              <td class="h5" id="td7">Distance</td>
-              <td class="h5" id="td8">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td9">Dest</td>
-              <td class="h5" id="td10">Distance</td>
-              <td class="h5" id="td11">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td12">Dest</td>
-              <td class="h5" id="td13">Distance</td>
-              <td class="h5" id="td14">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td15">Dest</td>
-              <td class="h5" id="td16">Distance</td>
-              <td class="h5" id="td17">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td18">Dest</td>
-              <td class="h5" id="td19">Distance</td>
-              <td class="h5" id="td20">Time</td>
-            </tr>
-            <tr>
-              <td class="h5" id="td21">Dest</td>
-              <td class="h5" id="td22">Distance</td>
-              <td class="h5" id="td23">Time</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- fix these ids and stuff from the copy & paste -->
+      <div class="form-group">
+        <label for="departuretime" class="m-2">Departure/Arrival Time</label>
+        <input type="email" class="form-control m-2" id="departuretime" placeholder="Enter departure time">
       </div>
+      <div class="form-group">
+        <input type="email" class="form-control m-2" id="arivaltime" placeholder="Enter arrival time">
+        <small id="emailHelp" class="form-text text-muted m-2">Please enter in this format......</small>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-2">
+          <label for="dropdownMenuButton1">Travel Mode</label>
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Driving
+              <!-- I just label it as driving, and make sure I default to driving in the code -->
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Driving</a>
+              <a class="dropdown-item" href="#">Walking</a>
+              <a class="dropdown-item" href="#">Cycling</a>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-2">
+          <label for="dropdownMenuButton2">Units</label>
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Imperial
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Imperial</a>
+              <a class="dropdown-item" href="#">Metric</a>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-2">
+          <label for="dropdownMenuButton3">Restrictions</label>
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton3"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              No Restrictions
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Avoid Tolls</a>
+              <a class="dropdown-item" href="#">Avoid Highways</a>
+              <a class="dropdown-item" href="#">Avoid Ferries</a>
+              <a class="dropdown-item" href="#">Avoid Indoor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" id="button" class="btn btn-primary btn-lg">Submit</button>
     </div>
 
-    <!-- <p id="outputtext"></p> -->
-  </body>
+    <!-- <h2>Basic Table</h2> -->
+    <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
+
+    <div class="container col-md-6">
+      <table class="table table-hover table-bordered m-2">
+        <thead>
+          <tr>
+            <th class="h3">Destination</th>
+            <th class="h3">Distance</th>
+            <th class="h3">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="h5" id="td0">Dest</td>
+            <td class="h5" id="td1">Distance</td>
+            <td class="h5" id="td2">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td3">Dest</td>
+            <td class="h5" id="td4">Distance</td>
+            <td class="h5" id="td5">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td6">Dest</td>
+            <td class="h5" id="td7">Distance</td>
+            <td class="h5" id="td8">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td9">Dest</td>
+            <td class="h5" id="td10">Distance</td>
+            <td class="h5" id="td11">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td12">Dest</td>
+            <td class="h5" id="td13">Distance</td>
+            <td class="h5" id="td14">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td15">Dest</td>
+            <td class="h5" id="td16">Distance</td>
+            <td class="h5" id="td17">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td18">Dest</td>
+            <td class="h5" id="td19">Distance</td>
+            <td class="h5" id="td20">Time</td>
+          </tr>
+          <tr>
+            <td class="h5" id="td21">Dest</td>
+            <td class="h5" id="td22">Distance</td>
+            <td class="h5" id="td23">Time</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- <p id="outputtext"></p> -->
+</body>
+
 </html>
