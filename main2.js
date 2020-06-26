@@ -28,7 +28,17 @@ $(document).ready(function () {
       console.log(destinations[i]);
     }
 
-    var linkprefix = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial";
+    var linkprefix = "https://maps.googleapis.com/maps/api/distancematrix/json?";
+
+    // Must check for units here since it comes in beginning of string
+    if (document.getElementById("imperialradio").checked) {
+      console.log("imperial units");
+      linkprefix += "units=imperial";
+    }
+    else if (document.getElementById("metricradio").checked) {
+      console.log("metric units")
+      linkprefix += "units=metric"
+    }
 
     var origin = "&origins=" + source;
 
@@ -58,12 +68,7 @@ $(document).ready(function () {
       additionals += "&mode=bicycling"
     }
 
-    if (!document.getElementById("imperialradio").checked) {
-      console.log("imperial units")
-    }
-    else if (document.getElementById("metricradio").checked) {
-      console.log("metric units")
-    }
+
 
     if (document.getElementById("avoidtollscheck").checked) {
       console.log("avoid tolls selected");
