@@ -40,6 +40,10 @@
 
 <body>
 
+
+
+  
+
   <div class="container col-lg-6">
     <div class="form-group">
       <label class="h3">Source:</label>
@@ -59,17 +63,23 @@
 
     <label class="h3" for="usr">Additional Parameters</label>
 
-    <!-- fix these ids and stuff from the copy & paste -->
-    <div class="form-group">
-      <input type="email" class="form-control m-2" id="departuretime" placeholder="Enter departure time">
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label">Depart</label>
+      <div class="col-10">
+        <input class="form-control" type="time" value="12:00:00" id="example-time-input">
+      </div>
     </div>
-    <div class="form-group">
-      <input type="email" class="form-control m-2" id="arivaltime" placeholder="Enter arrival time">
-      <small id="emailHelp" class="form-text text-muted m-2">Please enter in this format......</small>
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label">Arrive</label>
+      <div class="col-10">
+        <input class="form-control" type="time" value="12:00:00" id="example-time-input">
+      </div>
     </div>
 
     <div class="row m-2">
-      <div class="form-group m-2">
+
+      <label for="set1" class=''>Travel Type: </label>
+      <div class="form-group m-2" id="set1">
         <!-- Default checked -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="defaultChecked1" name="radioset1" checked>
@@ -86,7 +96,9 @@
           <label class="custom-control-label" for="defaultUnchecked2">Cycling</label>
         </div>
       </div>
-      <div class="form-group m-2">
+
+      <label for="set2" class=''>Units:</label>
+      <div class="form-group m-2" id="set2">
         <!-- Default checked -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="defaultChecked2" name="radioset2" checked>
@@ -99,8 +111,7 @@
         </div>
       </div>
 
-      <div class="form-group m-2">
-
+      <div class="form-group m-2"> 
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
