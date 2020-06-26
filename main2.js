@@ -43,10 +43,7 @@ $(document).ready(function () {
       }
     }
 
-    var key = "&key=" + MY_KEY;
-
-    //Finally, adding all the individual string components together
-    var fulllink = linkprefix + origin + destinationstring + key;
+    var additionals = "";
 
     // Check for additional parameters
     if (document.getElementById("drivingradio").checked) {
@@ -54,9 +51,11 @@ $(document).ready(function () {
     }
     else if (document.getElementById("walkingradio").checked) {
       console.log("walking mode");
+      additionals += "&mode=walking"
     }
     else if (document.getElementById("cyclingradio").checked) {
       console.log("cycling mode");
+      additionals += "&mode=bicycling"
     }
 
     if (!document.getElementById("imperialradio").checked) {
@@ -78,6 +77,13 @@ $(document).ready(function () {
     if (document.getElementById("avoidindoorcheck").checked) {
       console.log("avoid indoor selected");
     }
+
+    var key = "&key=" + MY_KEY;
+
+    //Finally, adding all the individual string components together
+    var fulllink = linkprefix + origin + destinationstring  + additionals + key;
+
+
 
     //Console debugging
     console.log(fulllink);
