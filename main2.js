@@ -19,7 +19,7 @@ $(document).ready(function () {
     destinations[5] = document.getElementById("destination5").value;
     destinations[6] = document.getElementById("destination6").value;
     destinations[7] = document.getElementById("destination7").value;
-    
+
 
     //console logging for debug purposes
     console.log("Source:\n" + source);
@@ -47,6 +47,37 @@ $(document).ready(function () {
 
     //Finally, adding all the individual string components together
     var fulllink = linkprefix + origin + destinationstring + key;
+
+    // Check for additional parameters
+    if (document.getElementById("drivingradio").checked) {
+      console.log("driving mode")
+    }
+    else if (document.getElementById("walkingradio").checked) {
+      console.log("walking mode");
+    }
+    else if (document.getElementById("cyclingradio").checked) {
+      console.log("cycling mode");
+    }
+
+    if (!document.getElementById("imperialradio").checked) {
+      console.log("imperial units")
+    }
+    else if (document.getElementById("metricradio").checked) {
+      console.log("metric units")
+    }
+
+    if (document.getElementById("avoidtollscheck").checked) {
+      console.log("avoid tolls selected");
+    }
+    if (document.getElementById("avoidhighwayscheck").checked) {
+      console.log("avoid highways selected");
+    }
+    if (document.getElementById("avoidferriescheck").checked) {
+      console.log("avoid ferries selected");
+    }
+    if (document.getElementById("avoidindoorcheck").checked) {
+      console.log("avoid indoor selected");
+    }
 
     //Console debugging
     console.log(fulllink);
@@ -86,8 +117,8 @@ $(document).ready(function () {
         document.getElementById("td21").innerHTML = a.destination_addresses[7];
         document.getElementById("td22").innerHTML = a.rows[0].elements[7].distance.text
         document.getElementById("td23").innerHTML = a.rows[0].elements[7].duration.text
-        
-    
+
+
         // wonderful interpolation... :)
         // var inner = `
         //   Origin:  ${a.origin_addresses[0]} <br> <br>
