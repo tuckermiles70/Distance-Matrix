@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+
+
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Material Design CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
 
   <!-- Just sets background color -->
   <style type="text/css">
     body {
-      background: #a8dadc !important;
+      background: #b8f2e6 !important;
     }
-
-    /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
 
     /* Changing Table Border Color */
     /* https://stackoverflow.com/questions/30573978/what-is-the-best-way-to-change-the-border-color-of-a-bootstrap-table */
@@ -34,90 +36,99 @@
       border: gray solid 1px !important;
     }
   </style>
-
-  <script src="config.js"></script>
-  <script src="main2.js"></script>
 </head>
 
-<body class="m-2">
-  <div class="row">
-    <!-- <p>The form below contains two input elements; one of type text and one of type password:</p> -->
-    <div class="container col-lg-6">
-      <div class="form-group">
-        <label class="h3">Source:</label>
-        <input type="text" class="form-control m-2" id="source" placeholder="Enter Source"/>
-      </div>
-      <div class="form-group">
-        <label class="h3">Destinations:</label>
-        <input type="text" class="form-control m-2" id="destination0" placeholder="Enter Destination 1"/>
-        <input type="text" class="form-control m-2" id="destination1" placeholder="Enter Destination 2"/>
-        <input type="text" class="form-control m-2" id="destination2" placeholder="Enter Destination 3"/>
-        <input type="text" class="form-control m-2" id="destination3" placeholder="Enter Destination 4"/>
-        <input type="text" class="form-control m-2" id="destination4" placeholder="Enter Destination 5"/>
-        <input type="text" class="form-control m-2" id="destination5" placeholder="Enter Destination 6"/>
-        <input type="text" class="form-control m-2" id="destination6" placeholder="Enter Destination 7"/>
-        <input type="text" class="form-control m-2" id="destination7" placeholder="Enter Destination 8"/>
-      </div>
+<body>
 
-      <label class="h3" for="usr">Additional Parameters</label>
-
-      <!-- fix these ids and stuff from the copy & paste -->
-      <div class="form-group">
-        <label for="departuretime" class="m-2">Departure/Arrival Time</label>
-        <input type="email" class="form-control m-2" id="departuretime" placeholder="Enter departure time">
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control m-2" id="arivaltime" placeholder="Enter arrival time">
-        <small id="emailHelp" class="form-text text-muted m-2">Please enter in this format......</small>
-      </div>
-      <div class="row">
-        <div class="form-group col-sm-2">
-          <label for="dropdownMenuButton1">Travel Mode</label>
-          <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Driving
-              <!-- I just label it as driving, and make sure I default to driving in the code -->
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Driving</a>
-              <a class="dropdown-item" href="#">Walking</a>
-              <a class="dropdown-item" href="#">Cycling</a>
-            </div>
-          </div>
-        </div>
-        <div class="form-group col-sm-2">
-          <label for="dropdownMenuButton2">Units</label>
-          <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Imperial
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Imperial</a>
-              <a class="dropdown-item" href="#">Metric</a>
-            </div>
-          </div>
-        </div>
-        <div class="form-group col-sm-2">
-          <label for="dropdownMenuButton3">Restrictions</label>
-          <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton3"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              No Restrictions
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Avoid Tolls</a>
-              <a class="dropdown-item" href="#">Avoid Highways</a>
-              <a class="dropdown-item" href="#">Avoid Ferries</a>
-              <a class="dropdown-item" href="#">Avoid Indoor</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" id="button" class="btn btn-primary btn-lg">Submit</button>
+  <div class="container col-lg-6">
+    <div class="form-group">
+      <label class="h3">Source:</label>
+      <input type="text" class="form-control m-2" id="source" placeholder="Enter Source" />
     </div>
+    <div class="form-group">
+      <label class="h3">Destinations:</label>
+      <input type="text" class="form-control m-2" id="destination0" placeholder="Enter Destination 1" />
+      <input type="text" class="form-control m-2" id="destination1" placeholder="Enter Destination 2" />
+      <input type="text" class="form-control m-2" id="destination2" placeholder="Enter Destination 3" />
+      <input type="text" class="form-control m-2" id="destination3" placeholder="Enter Destination 4" />
+      <input type="text" class="form-control m-2" id="destination4" placeholder="Enter Destination 5" />
+      <input type="text" class="form-control m-2" id="destination5" placeholder="Enter Destination 6" />
+      <input type="text" class="form-control m-2" id="destination6" placeholder="Enter Destination 7" />
+      <input type="text" class="form-control m-2" id="destination7" placeholder="Enter Destination 8" />
+    </div>
+
+    <label class="h3" for="usr">Additional Parameters</label>
+
+    <!-- fix these ids and stuff from the copy & paste -->
+    <div class="form-group">
+      <input type="email" class="form-control m-2" id="departuretime" placeholder="Enter departure time">
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control m-2" id="arivaltime" placeholder="Enter arrival time">
+      <small id="emailHelp" class="form-text text-muted m-2">Please enter in this format......</small>
+    </div>
+
+    <div class="row m-2">
+      <div class="form-group m-2">
+        <!-- Default checked -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="defaultChecked1" name="radioset1" checked>
+          <label class="custom-control-label" for="defaultChecked1">Driving</label>
+        </div>
+        <!-- Default unchecked -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="defaultUnchecked1" name="radioset1">
+          <label class="custom-control-label" for="defaultUnchecked1">Walking</label>
+        </div>
+        <!-- Default unchecked -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="radioset1">
+          <label class="custom-control-label" for="defaultUnchecked2">Cycling</label>
+        </div>
+      </div>
+      <div class="form-group m-2">
+        <!-- Default checked -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="defaultChecked2" name="radioset2" checked>
+          <label class="custom-control-label" for="defaultChecked2">Imperial</label>
+        </div>
+        <!-- Default unchecked -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="defaultUnchecked3" name="radioset2">
+          <label class="custom-control-label" for="defaultUnchecked3">Metric</label>
+        </div>
+      </div>
+
+      <div class="form-group m-2">
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Avoid Tolls
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+          <label class="form-check-label" for="defaultCheck2">
+            Avoid Highways
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+          <label class="form-check-label" for="defaultCheck3">
+            Avoid Ferries
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+          <label class="form-check-label" for="defaultCheck4">
+            Avoid Indoor
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" id="button" class="btn btn-primary btn-lg">Submit</button>
 
     <!-- <h2>Basic Table</h2> -->
     <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
@@ -177,7 +188,27 @@
     </div>
   </div>
 
-  <!-- <p id="outputtext"></p> -->
+  <!-- Bootstrap JS -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <!-- Material Design JS -->
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+  <!-- My scripts -->
+  <script src="config.js"></script>
+  <script src="main2.js"></script>
 </body>
 
 </html>
