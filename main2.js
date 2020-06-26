@@ -36,8 +36,8 @@ $(document).ready(function () {
       linkprefix += "units=imperial";
     }
     else if (document.getElementById("metricradio").checked) {
-      console.log("metric units")
-      linkprefix += "units=metric"
+      console.log("metric units");
+      linkprefix += "units=metric";
     }
 
     var origin = "&origins=" + source;
@@ -53,42 +53,44 @@ $(document).ready(function () {
       }
     }
 
-    var additionals = "";
+    var mode = "";
 
     // Check for additional parameters
     if (document.getElementById("drivingradio").checked) {
-      console.log("driving mode")
+      console.log("driving mode");
     }
     else if (document.getElementById("walkingradio").checked) {
       console.log("walking mode");
-      additionals += "&mode=walking"
+      mode += "&mode=walking";
     }
     else if (document.getElementById("cyclingradio").checked) {
       console.log("cycling mode");
-      additionals += "&mode=bicycling"
+      mode += "&mode=bicycling";
     }
 
-
+    var avoid = "";
 
     if (document.getElementById("avoidtollscheck").checked) {
       console.log("avoid tolls selected");
+      avoid += "&avoid=tolls"
     }
     if (document.getElementById("avoidhighwayscheck").checked) {
       console.log("avoid highways selected");
+      avoid += "&avoid=highways"
     }
     if (document.getElementById("avoidferriescheck").checked) {
       console.log("avoid ferries selected");
+      avoid += "&avoid=ferries"
     }
     if (document.getElementById("avoidindoorcheck").checked) {
       console.log("avoid indoor selected");
+      avoid += "&avoid=indoor"
     }
 
     var key = "&key=" + MY_KEY;
 
     //Finally, adding all the individual string components together
-    var fulllink = linkprefix + origin + destinationstring  + additionals + key;
-
-
+    var fulllink = linkprefix + origin + destinationstring  + mode + avoid + key;
 
     //Console debugging
     console.log(fulllink);
