@@ -70,6 +70,7 @@ $(document).ready(function () {
 
     var avoid = "";
 
+    // not sure if these need to be separated by "|" or just jave multiple "&..."
     if (document.getElementById("avoidtollscheck").checked) {
       console.log("avoid tolls selected");
       avoid += "&avoid=tolls"
@@ -90,7 +91,7 @@ $(document).ready(function () {
     var key = "&key=" + MY_KEY;
 
     //Finally, adding all the individual string components together
-    var fulllink = linkprefix + origin + destinationstring  + mode + avoid + key;
+    var fulllink = linkprefix + origin + destinationstring + mode + avoid + key;
 
     //Console debugging
     console.log(fulllink);
@@ -131,38 +132,11 @@ $(document).ready(function () {
         document.getElementById("td22").innerHTML = a.rows[0].elements[7].distance.text
         document.getElementById("td23").innerHTML = a.rows[0].elements[7].duration.text
 
+        // create PDF...
+        var doc = new jsPDF()
 
-        // wonderful interpolation... :)
-        // var inner = `
-        //   Origin:  ${a.origin_addresses[0]} <br> <br>
-
-        //   Distance to ${a.destination_addresses[0]}:  ${a.rows[0].elements[0].distance.text} <br>
-        //   Time to  ${a.destination_addresses[0]}:  ${a.rows[0].elements[0].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[1]}: ${a.rows[0].elements[1].distance.text} <br>
-        //   Time to ${a.destination_addresses[1]}: ${a.rows[0].elements[1].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[2]}: ${a.rows[0].elements[2].distance.text} <br>
-        //   Time to ${a.destination_addresses[2]}: ${a.rows[0].elements[2].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[3]}: ${a.rows[0].elements[3].distance.text} <br>
-        //   Time to ${a.destination_addresses[3]}: ${a.rows[0].elements[3].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[4]}: ${a.rows[0].elements[4].distance.text} <br>
-        //   Time to ${a.destination_addresses[4]}: ${a.rows[0].elements[4].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[5]}: ${a.rows[0].elements[5].distance.text} <br>
-        //   Time to ${a.destination_addresses[5]}: ${a.rows[0].elements[5].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[6]}: ${a.rows[0].elements[6].distance.text} <br>
-        //   Time to ${a.destination_addresses[6]}: ${a.rows[0].elements[6].duration.text} <br> <br>
-
-        //   Distance to ${a.destination_addresses[7]}: ${a.rows[0].elements[7].distance.text} <br>
-        //   Time to ${a.destination_addresses[7]}: ${a.rows[0].elements[7].duration.text} <br> <br>
-        // `
-
-        // //Insert aboce string into page's HTML
-        // document.getElementById("outputtext").innerHTML = inner;
+        doc.text('Hello world!', 10, 10)
+        doc.save('a4.pdf')
 
         //Console debugging
         console.log("Origin: " + a.origin_addresses[0]);
