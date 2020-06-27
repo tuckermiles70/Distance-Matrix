@@ -66,15 +66,17 @@
     <div class="form-group row">
       <label for="example-time-input" class="col-2 col-form-label">Depart</label>
       <div class="col-10">
-        <input class="form-control" type="time" value="12:00:00" id="example-time-input">
+        <input class="form-control" type="time" value="00:00:00" id="timeinput1">
       </div>
     </div>
     <div class="form-group row">
       <label for="example-time-input" class="col-2 col-form-label">Arrive</label>
       <div class="col-10">
-        <input class="form-control" type="time" value="12:00:00" id="example-time-input">
+        <input class="form-control" type="time" value="00:00:00" id="timeinput2">
       </div>
+      <small class="col-10 text-muted">Enter either a departure time or a destination time, but not both. Departure time must be current time or later.</small>
     </div>
+
 
     <div class="row m-2">
 
@@ -139,12 +141,12 @@
       </div>
     </div>
 
-    <button type="button" id="button" class="btn btn-primary btn-lg">Submit</button>
+    <button type="button" id="button" class="btn btn-info btn-lg col text-center">Submit</button>
 
     <!-- <h2>Basic Table</h2> -->
     <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
 
-    <div class="container col-md-6">
+    <!-- <div class="container col-md-6">
       <table class="table table-hover table-bordered m-2">
         <thead>
           <tr>
@@ -196,7 +198,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 
   <div id="footer">
