@@ -2,6 +2,11 @@
 
 //Great for testing: "http://api.plos.org/search?q=title:DNA"
 
+// import { genpdf } from './pdfgen.js';
+// import { genpdf } from './pdfgen.js';
+
+// genpdf();
+
 $(document).ready(function () {
   $("#button").click(function () {
     console.log("submitted!");
@@ -96,7 +101,7 @@ $(document).ready(function () {
       var dd = String(today.getDate()).padStart(2, '0');
       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
       var yyyy = today.getFullYear();
-      
+
       today = mm + '/' + dd + '/' + yyyy;
 
       var date = new Date(today + " " + document.getElementById("timeinput1").value);
@@ -110,7 +115,7 @@ $(document).ready(function () {
       var dd = String(today.getDate()).padStart(2, '0');
       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
       var yyyy = today.getFullYear();
-      
+
       today = mm + '/' + dd + '/' + yyyy;
 
       var date = new Date(today + " " + document.getElementById("timeinput2").value);
@@ -164,12 +169,6 @@ $(document).ready(function () {
         // document.getElementById("td22").innerHTML = a.rows[0].elements[7].distance.text
         // document.getElementById("td23").innerHTML = a.rows[0].elements[7].duration.text
 
-        // create PDF...
-        // var doc = new jsPDF()
-
-        // doc.text('Hello world!', 10, 10)
-        // doc.save('traveltable.pdf')
-
         //Console debugging
         console.log("Origin: " + a.origin_addresses[0]);
 
@@ -196,6 +195,11 @@ $(document).ready(function () {
 
         console.log("Distance to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].distance.text);
         console.log("Time to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].duration.text);
+
+        console.log("calling genpdf()");
+        // genpdf();
+
+
       }
     };
     //false to make this synchronous
