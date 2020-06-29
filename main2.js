@@ -7,6 +7,24 @@
 
 // genpdf();
 
+const doc = new jsPDF()
+
+// It can parse html:
+// <table id="my-table"><!-- ... --></table>
+doc.autoTable({ html: '#my-table' })
+
+// Or use javascript directly:
+doc.autoTable({
+  head: [['Name', 'Email', 'Country']],
+  body: [
+    ['David', 'david@example.com', 'Sweden'],
+    ['Castille', 'castille@example.com', 'Spain'],
+    // ...
+  ],
+})
+
+doc.save('table.pdf')
+
 $(document).ready(function () {
   $("#button").click(function () {
     console.log("submitted!");
