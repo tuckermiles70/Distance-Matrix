@@ -91,12 +91,33 @@ $(document).ready(function () {
     var time = "";
 
     if (document.getElementById("timeinput1").value != "00:00:00") {
-      console.log("user specified departure time of " + document.getElementById("timeinput1").value + " will be used.");
-      time += "&departuretime=..."
+
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      
+      today = mm + '/' + dd + '/' + yyyy;
+
+      var date = new Date(today + " " + document.getElementById("timeinput1").value);
+      console.log("Departure time selected is " + date);
+
+      //date.getTime() will return time since epoch of today's date and the selected time.
+      time += "&departuretime=" + date.getTime();
     }
     else if (document.getElementById("timeinput2").value != "00:00:00") {
-      console.log("user specified arrival time of " + document.getElementById("timeinput2").value + " will be used.");
-      time += "&arrrivaltime=..."
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      
+      today = mm + '/' + dd + '/' + yyyy;
+
+      var date = new Date(today + " " + document.getElementById("timeinput2").value);
+      console.log("Departure time selected is " + date);
+
+      //date.getTime() will return time since epoch of today's date and the selected time.
+      time += "&arrivaltime=" + date.getTime();
     }
 
     var key = "&key=" + MY_KEY;
