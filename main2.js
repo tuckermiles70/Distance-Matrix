@@ -49,10 +49,10 @@ $(document).ready(function () {
     var destinationstring = "&destinations=";
     for (i = 0; i < 8; i++) {
       destinationstring += destinations[i];
-      if (i != 8 - 2) {
-        if (destinations[i] != "" && destinations[i + 1] != "") {
-          destinationstring += "|";
-        }
+      if (i == 7) break;
+
+      if (destinations[i] != "" && destinations[i + 1] != "") {
+        destinationstring += "|";
       }
     }
 
