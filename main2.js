@@ -1,29 +1,6 @@
 //Spent forever attempting to make multiple calls to the API using the JS library, endless issues for me. Decided to switch to HTTP so I can move forward.
 
-//Great for testing: "http://api.plos.org/search?q=title:DNA"
-
-// import { genpdf } from './pdfgen.js';
-// import { genpdf } from './pdfgen.js';
-
-// genpdf();
-
-const doc = new jsPDF()
-
-// It can parse html:
-// <table id="my-table"><!-- ... --></table>
-doc.autoTable({ html: '#my-table' })
-
-// Or use javascript directly:
-doc.autoTable({
-  head: [['Name', 'Email', 'Country']],
-  body: [
-    ['David', 'david@example.com', 'Sweden'],
-    ['Castille', 'castille@example.com', 'Spain'],
-    // ...
-  ],
-})
-
-doc.save('table.pdf')
+import { genpdf } from './pdfgen.js';
 
 $(document).ready(function () {
   $("#button").click(function () {
@@ -47,9 +24,11 @@ $(document).ready(function () {
     //console logging for debug purposes
     console.log("Source:\n" + source);
     console.log("Destinations:");
+    var i;
     for (i = 0; i < 8; i++) {
       console.log(destinations[i]);
     }
+    console.log(destinations);
 
     var linkprefix = "https://maps.googleapis.com/maps/api/distancematrix/json?";
 
@@ -69,8 +48,8 @@ $(document).ready(function () {
     var destinationstring = "&destinations=";
     for (i = 0; i < 8; i++) {
       destinationstring += destinations[i];
-      if (i != 8 - 1) {
-        if (destinations[i] != "") {
+      if (i != 8 - 2) {
+        if (destinations[i] != "" && destinations[i + 1] != "") {
           destinationstring += "|";
         }
       }
@@ -155,67 +134,146 @@ $(document).ready(function () {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        // Typical action to be performed when the document is ready:
-        // document.getElementById("demo").innerHTML = xhttp.responseText;
+        // Action to be performed when the document is ready:
         var a = xhttp.responseText;
         a = JSON.parse(a);
         console.log(a);
 
+        var html = `
+          <table id="my-table" class="table table-hover table-bordered m-2">
+          <thead>
+            <tr>
+              <th class="h3">Destination</th>
+              <th class="h3">Distance</th>
+              <th class="h3">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="h5" id="td0">Destination</td>
+              <td class="h5" id="td1">Distance</td>
+              <td class="h5" id="td2">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td3">Destination</td>
+              <td class="h5" id="td4">Distance</td>
+              <td class="h5" id="td5">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td6">Destination</td>
+              <td class="h5" id="td7">Distance</td>
+              <td class="h5" id="td8">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td9">Destination</td>
+              <td class="h5" id="td10">Distance</td>
+              <td class="h5" id="td11">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td12">Destination</td>
+              <td class="h5" id="td13">Distance</td>
+              <td class="h5" id="td14">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td15">Destination</td>
+              <td class="h5" id="td16">Distance</td>
+              <td class="h5" id="td17">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td18">Destination</td>
+              <td class="h5" id="td19">Distance</td>
+              <td class="h5" id="td20">Time</td>
+            </tr>
+            <tr>
+              <td class="h5" id="td21">Destination</td>
+              <td class="h5" id="td22">Distance</td>
+              <td class="h5" id="td23">Time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        `;
+        document.getElementById("table").innerHTML = html;
 
-        // document.getElementById("td0").innerHTML = a.destination_addresses[0];
-        // document.getElementById("td1").innerHTML = a.rows[0].elements[0].distance.text
-        // document.getElementById("td2").innerHTML = a.rows[0].elements[0].duration.text
-        // document.getElementById("td3").innerHTML = a.destination_addresses[1];
-        // document.getElementById("td4").innerHTML = a.rows[0].elements[1].distance.text
-        // document.getElementById("td5").innerHTML = a.rows[0].elements[1].duration.text
-        // document.getElementById("td6").innerHTML = a.destination_addresses[2];
-        // document.getElementById("td7").innerHTML = a.rows[0].elements[2].distance.text
-        // document.getElementById("td8").innerHTML = a.rows[0].elements[2].duration.text
-        // document.getElementById("td9").innerHTML = a.destination_addresses[3];
-        // document.getElementById("td10").innerHTML = a.rows[0].elements[3].distance.text
-        // document.getElementById("td11").innerHTML = a.rows[0].elements[3].duration.text
-        // document.getElementById("td12").innerHTML = a.destination_addresses[4];
-        // document.getElementById("td13").innerHTML = a.rows[0].elements[4].distance.text
-        // document.getElementById("td14").innerHTML = a.rows[0].elements[4].duration.text
-        // document.getElementById("td15").innerHTML = a.destination_addresses[5];
-        // document.getElementById("td16").innerHTML = a.rows[0].elements[5].distance.text
-        // document.getElementById("td17").innerHTML = a.rows[0].elements[5].duration.text
-        // document.getElementById("td18").innerHTML = a.destination_addresses[6];
-        // document.getElementById("td19").innerHTML = a.rows[0].elements[6].distance.text
-        // document.getElementById("td20").innerHTML = a.rows[0].elements[6].duration.text
-        // document.getElementById("td21").innerHTML = a.destination_addresses[7];
-        // document.getElementById("td22").innerHTML = a.rows[0].elements[7].distance.text
-        // document.getElementById("td23").innerHTML = a.rows[0].elements[7].duration.text
+        if (destinations[0] != "") {
+          document.getElementById("td0").innerHTML = a.destination_addresses[0];
+          document.getElementById("td1").innerHTML = a.rows[0].elements[0].distance.text
+          document.getElementById("td2").innerHTML = a.rows[0].elements[0].duration.text
+        }
+        if (destinations[1] != "") {
+          document.getElementById("td3").innerHTML = a.destination_addresses[1];
+          document.getElementById("td4").innerHTML = a.rows[0].elements[1].distance.text
+          document.getElementById("td5").innerHTML = a.rows[0].elements[1].duration.text
+        }
+        if (destinations[2] != "") {
+          document.getElementById("td6").innerHTML = a.destination_addresses[2];
+          document.getElementById("td7").innerHTML = a.rows[0].elements[2].distance.text
+          document.getElementById("td8").innerHTML = a.rows[0].elements[2].duration.text
+        }
+        if (destinations[3] != "") {
+          document.getElementById("td9").innerHTML = a.destination_addresses[3];
+          document.getElementById("td10").innerHTML = a.rows[0].elements[3].distance.text
+          document.getElementById("td11").innerHTML = a.rows[0].elements[3].duration.text
+        }
+        if (destinations[4] != "") {
+          document.getElementById("td12").innerHTML = a.destination_addresses[4];
+          document.getElementById("td13").innerHTML = a.rows[0].elements[4].distance.text
+          document.getElementById("td14").innerHTML = a.rows[0].elements[4].duration.text
+        }
+        if (destinations[5] != "") {
+          document.getElementById("td15").innerHTML = a.destination_addresses[5];
+          document.getElementById("td16").innerHTML = a.rows[0].elements[5].distance.text
+          document.getElementById("td17").innerHTML = a.rows[0].elements[5].duration.text
+        }
+        if (destinations[6] != "") {
+          document.getElementById("td18").innerHTML = a.destination_addresses[6];
+          document.getElementById("td19").innerHTML = a.rows[0].elements[6].distance.text
+          document.getElementById("td20").innerHTML = a.rows[0].elements[6].duration.text
+        }
+        if (destinations[7] != "") {
+          document.getElementById("td21").innerHTML = a.destination_addresses[7];
+          document.getElementById("td22").innerHTML = a.rows[0].elements[7].distance.text
+          document.getElementById("td23").innerHTML = a.rows[0].elements[7].duration.text
+        }
+        
+
+
+
+
+
+
+
+
 
         //Console debugging
-        console.log("Origin: " + a.origin_addresses[0]);
+        // console.log("Origin: " + a.origin_addresses[0]);
 
-        console.log("Distance to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].distance.text);
-        console.log("Time to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].duration.text);
+        // console.log("Distance to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].distance.text);
+        // console.log("Time to " + a.destination_addresses[0] + ": " + a.rows[0].elements[0].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[1] + ": " + a.rows[0].elements[1].distance.text);
-        console.log("Time to " + a.destination_addresses[1] + ": " + a.rows[0].elements[1].duration.text);
+        // console.log("Distance to " + a.destination_addresses[1] + ": " + a.rows[0].elements[1].distance.text);
+        // console.log("Time to " + a.destination_addresses[1] + ": " + a.rows[0].elements[1].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[2] + ": " + a.rows[0].elements[2].distance.text);
-        console.log("Time to " + a.destination_addresses[2] + ": " + a.rows[0].elements[2].duration.text);
+        // console.log("Distance to " + a.destination_addresses[2] + ": " + a.rows[0].elements[2].distance.text);
+        // console.log("Time to " + a.destination_addresses[2] + ": " + a.rows[0].elements[2].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].distance.text);
-        console.log("Time to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].duration.text);
+        // console.log("Distance to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].distance.text);
+        // console.log("Time to " + a.destination_addresses[3] + ": " + a.rows[0].elements[3].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[4] + ": " + a.rows[0].elements[4].distance.text);
-        console.log("Time to " + a.destination_addresses[4] + ": " + a.rows[0].elements[4].duration.text);
+        // console.log("Distance to " + a.destination_addresses[4] + ": " + a.rows[0].elements[4].distance.text);
+        // console.log("Time to " + a.destination_addresses[4] + ": " + a.rows[0].elements[4].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[5] + ": " + a.rows[0].elements[5].distance.text);
-        console.log("Time to " + a.destination_addresses[5] + ": " + a.rows[0].elements[5].duration.text);
+        // console.log("Distance to " + a.destination_addresses[5] + ": " + a.rows[0].elements[5].distance.text);
+        // console.log("Time to " + a.destination_addresses[5] + ": " + a.rows[0].elements[5].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[6] + ": " + a.rows[0].elements[6].distance.text);
-        console.log("Time to " + a.destination_addresses[6] + ": " + a.rows[0].elements[6].duration.text);
+        // console.log("Distance to " + a.destination_addresses[6] + ": " + a.rows[0].elements[6].distance.text);
+        // console.log("Time to " + a.destination_addresses[6] + ": " + a.rows[0].elements[6].duration.text);
 
-        console.log("Distance to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].distance.text);
-        console.log("Time to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].duration.text);
+        // console.log("Distance to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].distance.text);
+        // console.log("Time to " + a.destination_addresses[7] + ": " + a.rows[0].elements[7].duration.text);
 
         console.log("calling genpdf()");
-        // genpdf();
+        genpdf();
 
 
       }
