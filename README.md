@@ -6,5 +6,7 @@ My motivation for this was to create a tool for people who may not be tech-savvy
 
 # Usage
 
-
-
+<!-- Notes for when I write this -->
+<!-- Add general photo at top -->
+<!-- Show how specific the destination can be, as well as broad -->
+<!-- Talk about the tech I used (jsPDF, jsPDF-autotable, and Google's Distance Matrix) -->
