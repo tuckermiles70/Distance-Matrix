@@ -1,3 +1,5 @@
+<!-- Tucker Miles 2020 -->
+
 <!doctype html>
 <html lang="en">
 
@@ -38,15 +40,13 @@
 
 <body>
 
-
-
-
-
   <div class="container col-lg-6">
+    <!-- Source Input -->
     <div class="form-group">
       <label class="h3">Source:</label>
       <input type="text" class="form-control m-2" id="source" placeholder="Enter Source" />
     </div>
+    <!-- Destination Input -->
     <div class="form-group">
       <label class="h3">Destinations:</label>
       <input type="text" class="form-control m-2" id="destination0" placeholder="Enter Destination 1" />
@@ -61,12 +61,14 @@
 
     <label class="h3" for="usr">Additional Parameters</label>
 
+    <!-- Departure Time Input -->
     <div class="form-group row">
       <label for="example-time-input" class="col-2 col-form-label">Depart</label>
       <div class="col-10">
         <input class="form-control" type="time" value="00:00:00" id="timeinput1">
       </div>
     </div>
+    <!-- Arrival Time Input -->
     <div class="form-group row">
       <label for="example-time-input" class="col-2 col-form-label">Arrive</label>
       <div class="col-10">
@@ -76,9 +78,8 @@
         must be current time or later.</small>
     </div>
 
-
     <div class="row m-2">
-
+      <!-- Travel Type Radios -->
       <label for="set1" class=''>Travel Type: </label>
       <div class="form-group col-sm-2" id="set1">
         <!-- Default checked -->
@@ -98,6 +99,7 @@
         </div>
       </div>
 
+      <!-- Units Radios -->
       <label for="set2" class=''>Units:</label>
       <div class="form-group col-sm-2" id="set2">
         <!-- Default checked -->
@@ -112,6 +114,7 @@
         </div>
       </div>
 
+      <!-- Avoid Checkboxes -->
       <div class="form-group col-sm-3">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="avoidtollscheck">
@@ -140,15 +143,14 @@
       </div>
     </div>
 
+    <!-- Submit -->
     <button type="button" id="button" class="btn btn-info btn-lg col text-center">Submit</button>
 
-    <!-- <h2>Basic Table</h2> -->
-    <!-- <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>             -->
-
+    <!-- Empty container where the table will be inserted upon submit -->
     <div class="container" id="table">
-
   </div>
 
+  <!-- Footer with my name -->
   <div id="footer">
     <div class="container text-center">
       <p class="text-muted credit" style="color:#fff">Tucker Miles 2020</p>
@@ -173,10 +175,10 @@
   <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
+  <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
     integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
     crossorigin="anonymous"></script>
-
   <script src="https://unpkg.com/jspdf-autotable@3.5.6/dist/jspdf.plugin.autotable.js"></script>
 
   <!-- My scripts -->

@@ -1,3 +1,6 @@
+//Tucker Miles 2020
+
+//Will generate the pdf table just by passing doc.autotable the id of my html table
 export function genpdf() {
 
     const doc = new jsPDF()
@@ -6,8 +9,5 @@ export function genpdf() {
     // <table id="my-table"><!-- ... --></table>
     doc.autoTable({ html: '#my-table' })
 
-    // Or use javascript directly:
-
-
-    doc.save('table.pdf')
+    doc.save('DistanceTable.pdf')
 }
