@@ -8,7 +8,7 @@ My motivation for this was to create a tool for people who may not be tech-savvy
 
 ## Usage
 
-The tool is simple to use. Just input your source and as many destinations as you'd like to, up to 8. These can be as broad or as specific as you'd like them to be (a town vs a specific address). Then select any additional paramaters that you may want, and click the submit button. After this, your distance table will  be generated.
+The tool is simple to use. Just input your source and as many destinations as you'd like to, up to 8. These can be as broad or as specific as you'd like them to be (a town vs a specific address, for example). Then select any additional parameters that you may want, and click the submit button. After this, your distance table will  be generated.
 
 For example, let's use default settings, Knoxville as a source, and random places as our destinations as below.
 
@@ -61,3 +61,4 @@ And when we submit this, you the results are presented in the exact same format 
 <!-- Add general photo at top -->
 <!-- Show how specific the destination can be, as well as broad -->
 <!-- Talk about the tech I used (jsPDF, jsPDF-autotable, and Google's Distance Matrix) -->
+<!-- Talk about how I wanted to learn about frontend dev in motivation and in tech sections -->
