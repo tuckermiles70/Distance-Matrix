@@ -2,7 +2,7 @@
 
 This project allows users to input a list of places they go to (such as doctors offices, family/friend's houses, grocery stores, etc) and generate a nice way to view the distance and average time to get to all of them. The user is able to set a departure/arrival time, change their travel type(driving, walking, cycling), set units(imperial or metric), and choose to avoid certain things (tolls, highways, ferries, indoor) on their trip! Once the form is submitted, a table is displayed on the webpage, and a printable pdf is generated with the same information.
 
-My motivation for this was to create a tool for people who may not be tech-savvy or comfortable enough to use their computer to get this sort of information. For example, someone who is elderly could submit this form, print the pdf, and keep it on hand for quick reference.
+My motivation for this was to create a tool for people who may not be tech-savvy or comfortable enough to use their computer to get this sort of information. For example, someone who is elderly could have someone submit this form for them, print the pdf, and keep it on hand for quick reference.
 
 <div style="text-align:center"><img src="./screenshots/emptymain.png" /></div>
 
@@ -37,27 +37,14 @@ We have a few options here, we can specifiy either a departure time or an arriva
 <div style="text-align:center"><img src="./screenshots/timeselector.png" /></div>
 
 
-Let's use the same source and destinations, but for this example let's say we want cycling as our travel mode, we want to avoid higways, and we want metric units. Here's the form for that:
+Let's use the same source and destinations, but for this example let's say we want cycling as our travel mode, we want to avoid higways, and we want to use metric units. Here's the form for that:
 
 <div style="text-align:center"><img src="./screenshots/filledmainwithoptions.png" /></div>
 
-And when we submit this, you the results are presented in the exact same format as before, but were generated with the selected options as seen here:
+And when we submit this, you the results are presented in the exact same format as before, but they were generated with the selected parameters we selected above. That's a long bike ride!
 
 <div style="text-align:center"><img src="./screenshots/timetablewithoptions.png" /></div>
 
 ## The Tech
 
-The backend for this tool was all done in JavaScript. I specifically wanted to get more experience with frontend, so going with some flavor of JavaScript, HTML, and CSS seemed appropriate. Most of this was done in HTML utilizing Bootstrap styling classes, with a few CSS overrides. As far as the heavy lifting goes, I used a couple different API's and packages. For generating the distances and times themselves, I used [Google's Distance Matrix API](ttps://developers.google.com/maps/documentation/distance-matrix/start). All it does is provide travel distances and times for a matric of origins and destinations, based on the recommended route between start and end points. In addition to this, I used [jsPDF](https://github.com/MrRio/jsPDF) and an excellent extension for it, [jsPDF-AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable). jsPDF is a simple to use library to generate PDFs in JavasScipt, and jsPDF-AutoTable adds the ability to generate PDF tables by parsing HTML tables or by using Javascript data directly.
-
-
-
-
-
-
-
-
-<!-- Notes for when I write this -->
-<!-- Add general photo at top -->
-<!-- Show how specific the destination can be, as well as broad -->
-<!-- Talk about the tech I used (jsPDF, jsPDF-autotable, and Google's Distance Matrix) -->
-<!-- Talk about how I wanted to learn about frontend dev in motivation and in tech sections -->
+The backend for this tool was all done in JavaScript. I specifically wanted to get more experience with frontend, so going with some flavor of JavaScript, HTML, and CSS seemed appropriate. All of the frontend was done in HTML utilizing Bootstrap styling classes, with a few CSS overrides. As far as the heavy lifting goes, I used a couple different API's and packages. For generating the distances and times themselves, I used [Google's Distance Matrix API](ttps://developers.google.com/maps/documentation/distance-matrix/start). All it does is provide travel distances and times for a matrix of origins and destinations, based on the recommended route between start and end points. In addition to this, I used [jsPDF](https://github.com/MrRio/jsPDF) and an excellent extension for it, [jsPDF-AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable). jsPDF is a simple to use library to generate PDFs in JavaScipt, and jsPDF-AutoTable adds the ability to generate PDF tables by parsing HTML tables or by using Javascript data directly.
